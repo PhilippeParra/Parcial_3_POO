@@ -2,15 +2,20 @@ package modelo;
 
 public class CuentaAhorros extends CuentaBancaria
 {
-    public CuentaAhorros(int Saldo)
+    private int TipodeCuenta = 2;
+    public CuentaAhorros(String NumerodeCuenta, double Saldo)
     {
-        super (Saldo);
+        super(NumerodeCuenta, Saldo);
     }
 
+    public int getTipo()
+    {
+        return TipodeCuenta;
+    }
 
     public String toString() 
     {
         setInterés(4);
-        return "la informacion de la cuenta es" + "\nTipo de cuenta: Ahorros" + "\nSaldo: " + getSaldo() + "\nInterés actual: " + getInterés();
+        return "la informacion de la cuenta es" + "\nTipo de cuenta: Ahorros" + "\nNumero de la cuenta: " + NumerodeCuenta + "\nSaldo: " + getSaldo() + "\nInterés actual: " + getInterés();
     }
 }

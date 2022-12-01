@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 public class CuentaBancaria
 {
-    protected int saldo;
-    protected int interés;
+    protected String NumerodeCuenta;
+    protected double saldo;
+    protected double interés;
 
     private ArrayList Cuentas;
 
-    public CuentaBancaria(int Saldo)
+    public CuentaBancaria(String pNumerodeCuenta, double Saldo)
     {
+        this.NumerodeCuenta = pNumerodeCuenta;
         this.saldo = Saldo;
         this.interés = 0;
         Cuentas = new ArrayList();
@@ -31,14 +33,19 @@ public class CuentaBancaria
         Cuentas.add(libreta);
     }
 
-    public int getSaldo()
+    public double getSaldo()
     {
         return saldo;
     }
 
-    public int getInterés()
+    public double getInterés()
     {
         return interés;
+    }
+
+    public String getNumerodeCuenta()
+    {
+        return NumerodeCuenta;
     }
 
     public CuentaBancaria getCuenta(int i)
@@ -46,12 +53,12 @@ public class CuentaBancaria
         return (CuentaBancaria) Cuentas.get(i);
     }
 
-    public void setSaldo(int saldo) 
+    public void setSaldo(double saldo) 
     {
         this.saldo = saldo;
     }
 
-    public void setInterés(int Interés) 
+    public void setInterés(double Interés) 
     {
         this.interés = getSaldo() * (Interés/100);
     }
